@@ -1,11 +1,3 @@
-provider "oci" {
-  tenancy_ocid     = var.tenancy_ocid
-  user_ocid        = var.user_ocid
-  fingerprint      = var.fingerprint
-  private_key_path = var.private_key_path
-  region           = var.region
-}
-
 resource "oci_core_instance" "vm1" {
   availability_domain = data.oci_identity_availability_domains.ADs.availability_domains[0].name
   compartment_id      = var.compartment_ocid
