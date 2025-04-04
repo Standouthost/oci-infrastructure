@@ -33,6 +33,16 @@ variable "subnet_ocid" {
   type        = string
 }
 
+variable "image_source_ocid" {
+  description = "Image to use for instance"
+  type        = string
+}
+
+variable "availability_domain" {
+  description = "Availability Domain to install instance in"
+  type        = string
+}
+
 variable "ssh_public_key" {
   description = "SSH public key to inject into instance metadata"
   type        = string
