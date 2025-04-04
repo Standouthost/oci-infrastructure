@@ -45,15 +45,11 @@ data "oci_identity_availability_domains" "ADs" {
 }
 
 data "oci_core_images" "ubuntu_2404" {
-  compartment_id           = var.compartment_ocid
-  operating_system         = "Canonical Ubuntu"
-  operating_system_version = "24.04"
-  shape                    = "VM.Standard.E2.1.Micro"
+  compartment_id = var.compartment_ocid
 
-  # This narrows it to only images with this name pattern
-  display_name = "Canonical-Ubuntu-24.04-Minimal-2025.03.28-0"
+  # OCI requires that if you filter by display_name, you must not filter by anything else.
+  display_name   = "Canonical-Ubuntu-24.04-Minimal-2025.03.28-0"
 
-  sort_by    = "TIMECREATED"
-  sort_order = "DESC"
+  sort_by        = "TIMECREATED"
+  sort_order     = "DESC"
 }
-
